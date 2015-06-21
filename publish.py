@@ -9,8 +9,9 @@ inventory = {
     '1.Basics'          : "sprites256 palettes rotate collision scroll",
     '2.Audio'           : "toccata player sample instruments2",
     '3.Advanced'        : "interrupt splitscreen jkcollision bitmap wireframe snow assets",
-    '4.Demo'            : "ball chessboard asteroids frogger",
-    '5.Tools'           : "selftest screenshot memloader joytest",
+    '4.Demo'            : "ball chessboard dna",
+    '5.Games'           : "asteroids frogger",
+    '6.Tools'           : "selftest screenshot memloader joytest",
 }
 
 import zipfile
