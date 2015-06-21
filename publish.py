@@ -10,7 +10,7 @@ inventory = {
     '2.Audio'           : "toccata player sample instruments2",
     '3.Advanced'        : "interrupt splitscreen jkcollision bitmap wireframe snow assets",
     '4.Demo'            : "ball chessboard dna",
-    '5.Games'           : "asteroids frogger",
+    '5.Games'           : "asteroids frogger chopper",
     '6.Tools'           : "selftest screenshot memloader joytest",
 }
 
