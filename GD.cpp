@@ -17,12 +17,14 @@ HardwareSPI SPI(1);
 #include <GD.h>
 #endif
 
+static byte GD_SEL_PIN;
 GDClass GD;
 
-void GDClass::begin()
+void GDClass::begin(int pin)
 {
   delay(250); // give Gameduino time to boot
-  pinMode(SS_PIN, OUTPUT);
+  GD_SEL_PIN = pin;
+  pinMode(GD_SEL_PIN, OUTPUT);
 #ifdef BOARD_maple
   SPI.begin(SPI_4_5MHZ, MSBFIRST, 0);
 #else
@@ -32,7 +34,7 @@ void GDClass::begin()
   SPI.setDataMode(SPI_MODE0);
   SPSR = (1 << SPI2X);
 #endif
-  digitalWrite(SS_PIN, HIGH);
+  digitalWrite(GD_SEL_PIN, HIGH);
 
   GD.wr(J1_RESET, 1);           // HALT coprocessor
   __wstart(RAM_SPR);            // Hide all sprites
@@ -63,7 +65,7 @@ void GDClass::end() {
 
 void GDClass::__start(unsigned int addr) // start an SPI transaction to addr
 {
-  digitalWrite(SS_PIN, LOW);
+  digitalWrite(GD_SEL_PIN, LOW);
   SPI.transfer(highByte(addr));
   SPI.transfer(lowByte(addr));  
 }
@@ -81,7 +83,7 @@ void GDClass::__wstartspr(unsigned int sprnum)
 
 void GDClass::__end() // end the SPI transaction
 {
-  digitalWrite(SS_PIN, HIGH);
+  digitalWrite(GD_SEL_PIN, HIGH);
 }
 
 byte GDClass::rd(unsigned int addr)

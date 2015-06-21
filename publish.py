@@ -12,6 +12,7 @@ inventory = {
     '4.Demo'            : "ball chessboard dna spectrum cp437 watterott",
     '5.Games'           : "asteroids frogger chopper manicminer",
     '6.Tools'           : "selftest screenshot memloader joytest",
+    '7.Contrib'         : "singingPlant",
 }
 
 import zipfile

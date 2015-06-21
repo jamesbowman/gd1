@@ -7,11 +7,6 @@
 #ifndef _GD_H_INCLUDED
 #define _GD_H_INCLUDED
 
-// define SS_PIN before including "GD.h" to override this
-#ifndef SS_PIN
-#define SS_PIN 9
-#endif
-
 #ifdef BOARD_maple
 
 #include "wirish.h"
@@ -40,7 +35,7 @@ struct sprplot
 
 class GDClass {
 public:
-  static void begin();
+  static void begin(int pin = 9);
   static void end();
   static void __start(unsigned int addr);
   static void __wstart(unsigned int addr);
