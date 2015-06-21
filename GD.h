@@ -73,7 +73,7 @@ public:
   void __wstartspr(unsigned int spr = 0);
   void xsprite(int ox, int oy, char x, char y, byte image, byte palette, byte rot = 0, byte jk = 0);
   void xhide();
-  void plots(int ox, int oy, const sprplot *psp, byte count, byte rot, byte jk);
+  void plots(int ox, int oy, const PROGMEM sprplot *psp, byte count, byte rot, byte jk);
 
   byte spr;   // Current sprite, incremented by xsprite/xhide above
 };
