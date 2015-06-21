@@ -10,7 +10,7 @@ inventory = {
     '2.Audio'           : "toccata player sample instruments2",
     '3.Advanced'        : "interrupt splitscreen jkcollision bitmap wireframe snow assets",
     '4.Demo'            : "ball chessboard dna spectrum cp437 watterott",
-    '5.Games'           : "asteroids frogger chopper",
+    '5.Games'           : "asteroids frogger chopper manicminer",
     '6.Tools'           : "selftest screenshot memloader joytest",
 }
 
@@ -56,4 +56,4 @@ testset.close()
 z.close()
 
 # print ["./mkino %s" % s for s in " ".join(inventory.values()).split()]
-print " ".join(legit)
+# print " ".join(legit)
