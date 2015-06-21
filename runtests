@@ -1,0 +1,7 @@
+set -e
+for p in $*
+do
+  echo $p
+  ./mkino $p
+  read X
+done
