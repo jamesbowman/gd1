@@ -4,19 +4,19 @@
 #include "instruments.h"
 
 // midi frequency table
-static PROGMEM prog_uint16_t midifreq[128] = {
+static const PROGMEM uint16_t midifreq[128] = {
 32,34,36,38,41,43,46,48,51,55,58,61,65,69,73,77,82,87,92,97,103,110,116,123,130,138,146,155,164,174,184,195,207,220,233,246,261,277,293,311,329,349,369,391,415,440,466,493,523,554,587,622,659,698,739,783,830,880,932,987,1046,1108,1174,1244,1318,1396,1479,1567,1661,1760,1864,1975,2093,2217,2349,2489,2637,2793,2959,3135,3322,3520,3729,3951,4186,4434,4698,4978,5274,5587,5919,6271,6644,7040,7458,7902,8372,8869,9397,9956,10548,11175,11839,12543,13289,14080,14917,15804,16744,17739,18794,19912,21096,22350,23679,25087,26579,28160,29834,31608,33488,35479,37589,39824,42192,44701,47359,50175
 };
 
 class player {
 public:
   byte voices, duration;
-  prog_uchar *amps;
+  flash_uint8_t *amps;
   byte fv;
   player() {
     duration = 0;
   }
-  void begin(PROGMEM prog_uchar *instr, byte note, byte firstvoice) {
+  void begin(flash_uint8_t *instr, byte note, byte firstvoice) {
     voices = pgm_read_byte(instr++);
     duration = pgm_read_byte(instr++);
     uint16_t midi = pgm_read_word(midifreq + note);
@@ -77,7 +77,7 @@ static struct {
   { 60, 83 }
 };
 
-static void pickinstrument(prog_uchar* &instdata, byte &pitchdrop, byte n)
+static void pickinstrument(flash_uint8_t* &instdata, byte &pitchdrop, byte n)
 {
   char* name = "";
   switch (n) {
@@ -124,7 +124,7 @@ void loop()
   byte nextv = 0;
   byte v;
   for (byte inst = 0; inst < 13; inst++) {
-    prog_uchar* instdata;
+    flash_uint8_t* instdata;
     byte pitchdrop;
     pickinstrument(instdata, pitchdrop, inst);
     byte t = 0;

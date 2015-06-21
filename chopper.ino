@@ -27,7 +27,7 @@ int atxy(int x, int y)
 // copy a (w,h) rectangle from the source image (x,y) into picture RAM
 static void rect(unsigned int dst, byte x, byte y, byte w, byte h)
 {
-  prog_uchar *src = desert_pic + (16 * y) + x;
+  flash_uint8_t *src = desert_pic + (16 * y) + x;
   while (h--) {
     GD.copy(dst, src, w);
     dst += 64;
@@ -87,7 +87,7 @@ void setup()
   GD.uncompress(RAM_PAL, desert_pal_compressed);
 
   {
-    prog_uchar *src = desert_pic;
+    flash_uint8_t *src = desert_pic;
     for (byte y = 0; y < 32; y++) {
       for (byte x = 0; x < 64; x += 16)
         GD.copy(atxy(x, y), src, 16);

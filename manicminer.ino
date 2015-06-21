@@ -105,7 +105,7 @@ void unpack8(byte b)
 }
 
 // unpack monochrome bitmap from flash to Gameduino character RAM at dst
-void unpack8xn(uint16_t dst, PROGMEM prog_uchar *src, uint16_t size)
+void unpack8xn(uint16_t dst, flash_uint8_t *src, uint16_t size)
 {
   GD.__wstart(dst);
   while (size--)
@@ -125,7 +125,7 @@ void send8(byte b, byte zero, byte one)
 }
 
 // load an 8x8 into a hw 256-color sprite, padding with transparent (color 255)
-void loadspr8(byte slot, PROGMEM prog_uchar *src, byte zero, byte one)
+void loadspr8(byte slot, flash_uint8_t *src, byte zero, byte one)
 {
   GD.__wstart(RAM_SPRIMG + (slot << 8));
   for (byte i = 8; i; i--) {
@@ -138,7 +138,7 @@ void loadspr8(byte slot, PROGMEM prog_uchar *src, byte zero, byte one)
 }
 
 // load an 16x16 into a hw 256-color sprite
-void loadspr16(byte slot, PROGMEM prog_uchar *src, byte zero, byte one)
+void loadspr16(byte slot, flash_uint8_t *src, byte zero, byte one)
 {
   GD.__wstart(RAM_SPRIMG + (slot << 8));
   for (byte i = 32; i; i--)
@@ -185,7 +185,7 @@ struct state_t {
   byte jumping;
   signed char wyv;
   byte conveyor[2];
-  PROGMEM prog_uchar *guardian;
+  flash_uint8_t *guardian;
   uint16_t prevray[MAXRAY];
   byte switch1, switch2;
 } state;
@@ -251,7 +251,7 @@ static void clear_screen(byte yclear = 16)
   pause(6);
 }
 
-static void loadlevel(PROGMEM struct level *l)
+static void loadlevel(const PROGMEM struct level *l)
 {
   clear_screen();
 
@@ -259,7 +259,7 @@ static void loadlevel(PROGMEM struct level *l)
   GD.wr16(RAM_PAL + 8 * CHR_BORDER, COLOR(pgm_read_byte_near(&l->border)));
 
   // background picture: uncompress into scratch then copy to screen
-  prog_uchar *background = (prog_uchar*)pgm_read_word_near(&l->background);
+  flash_uint8_t *background = (flash_uint8_t*)pgm_read_word_near(&l->background);
   uint16_t scratch = 4096 - 512;  // offscreen scratch
   GD.uncompress(scratch, background);
   for (byte y = 0; y < 16; y++)
@@ -283,7 +283,7 @@ static void loadlevel(PROGMEM struct level *l)
   // block 2 is the crumbling floor
   // put the 7 anims of crumbling floor in chars 8-14
   GD.fill(RAM_CHR + 16 * 8, 0, 16 * 7);
-  prog_uchar *src = l->bgchars + 2 * 8;
+  flash_uint8_t *src = l->bgchars + 2 * 8;
   for (byte i = 0; i < 7; i++) {
     byte ch = 8 + i;
     unpack8xn(RAM_CHR + 16 * ch + 2 * (i + 1), src, 7 - i);
@@ -459,7 +459,7 @@ void game_graphics()
 }
 
 // midi frequency table
-static PROGMEM prog_uint16_t midifreq[128] = {
+static const PROGMEM uint16_t midifreq[128] = {
 32,34,36,38,41,43,46,48,51,55,58,61,65,69,73,77,82,87,92,97,103,110,116,123,130,138,146,155,164,174,184,195,207,220,233,246,261,277,293,311,329,349,369,391,415,440,466,493,523,554,587,622,659,698,739,783,830,880,932,987,1046,1108,1174,1244,1318,1396,1479,1567,1661,1760,1864,1975,2093,2217,2349,2489,2637,2793,2959,3135,3322,3520,3729,3951,4186,4434,4698,4978,5274,5587,5919,6271,6644,7040,7458,7902,8372,8869,9397,9956,10548,11175,11839,12543,13289,14080,14917,15804,16744,17739,18794,19912,21096,22350,23679,25087,26579,28160,29834,31608,33488,35479,37589,39824,42192,44701,47359,50175
 };
 #define MIDI(n) pgm_read_word(midifreq + (n))
@@ -500,7 +500,7 @@ display:
     GD.microcode(spectrum_code, sizeof(spectrum_code));
     GD.uncompress(0x4000, screen_mm1);
 
-    for (prog_uint32_t *tune = blue_danube;
+    for (const PROGMEM uint32_t *tune = blue_danube;
          (size_t)tune < ((size_t)blue_danube + sizeof(blue_danube));
          tune++) {
       uint32_t cmd = pgm_read_dword_near(tune);
@@ -521,10 +521,10 @@ display:
     // GD.screenshot(ss++);    // JCB
 
     for (byte i = 0; i < ((sizeof(message) - 1) - 32); i++) {
-      prog_uchar *src = message + i;
+      flash_uint8_t *src = message + i;
       for (byte j = 0; j < 32; j++) {
         byte ch = pgm_read_byte_near(src + j);
-        prog_uchar *glyph = specfont + ((ch - ' ') << 3);
+        flash_uint8_t *glyph = specfont + ((ch - ' ') << 3);
         for (byte k = 0; k < 8; k++)
           GD.wr(0x5060 + j + (k << 8), pgm_read_byte_near(glyph++));
       }

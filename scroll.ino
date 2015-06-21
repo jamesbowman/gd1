@@ -11,7 +11,7 @@ int atxy(int x, int y)
 // copy a (w,h) rectangle from the source image (x,y) into picture RAM
 static void rect(unsigned int dst, byte x, byte y, byte w, byte h)
 {
-  prog_uchar *src = platformer_pic + (16 * y) + x;
+  flash_uint8_t *src = platformer_pic + (16 * y) + x;
   while (h--) {
     GD.copy(dst, src, w);
     dst += 64;

@@ -14,7 +14,7 @@ int atxy(int x, int y)
 
 static void square(byte x, byte y, byte light)
 {
-  prog_uchar *src = Wood32_pic + (16 * light);
+  flash_uint8_t *src = Wood32_pic + (16 * light);
   int addr = atxy(x, y);
   GD.copy(addr + 0 * 64, src, 4);
   GD.copy(addr + 1 * 64, src + 4, 4);

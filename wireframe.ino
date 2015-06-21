@@ -171,8 +171,8 @@ static byte projected[40 * 2];
 void project(struct ship *s, float distance)
 {
   byte vx;
-  prog_char *pm = s->vertices; 
-  prog_char *pm_e = pm + (s->nvertices * 3);
+  flash_int8_t *pm = s->vertices; 
+  flash_int8_t *pm_e = pm + (s->nvertices * 3);
   byte *dst = projected;
   char x, y, z;
 
@@ -193,8 +193,8 @@ void draw(struct ship *s, float distance)
 {
   project(s, distance);
 
-  prog_uchar *pe = s->edges; 
-  prog_uchar *pe_e = pe + (s->nedges * 2);
+  flash_uint8_t *pe = s->edges; 
+  flash_uint8_t *pe_e = pe + (s->nedges * 2);
   while (pe < pe_e) {
     byte *v0 = &projected[pgm_read_byte_near(pe++) << 1];
     byte *v1 = &projected[pgm_read_byte_near(pe++) << 1];

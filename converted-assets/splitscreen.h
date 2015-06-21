@@ -1,4 +1,4 @@
-static PROGMEM prog_uchar splitscreen_code[] = {
+static flash_uint8_t splitscreen_code[] = {
 0xB3,0x15,
 0x01,0x80,
 0x0F,0x72,

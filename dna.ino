@@ -65,8 +65,8 @@ static struct screenpt projected[NVERTICES];
 void project(float distance)
 {
   byte vx;
-  prog_char *pm = cloud; 
-  prog_char *pm_e = cloud + (NVERTICES*3);
+  flash_int8_t *pm = cloud; 
+  flash_int8_t *pm_e = cloud + (NVERTICES*3);
   struct screenpt *dst = projected;
   signed char x, y, z;
 
@@ -178,7 +178,7 @@ void setup()
   Serial.begin(1000000);  // JCB
 
   for (byte y = 0; y < 38; y++) {
-    prog_uchar *src = ramp_pic + y * 4;
+    flash_uint8_t *src = ramp_pic + y * 4;
     for (byte x = 0; x < 50; x++)
       GD.wr(RAM_PIC + y * 64 + x, pgm_read_byte(src + random(4)));
   }

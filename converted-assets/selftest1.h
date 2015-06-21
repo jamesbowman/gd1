@@ -1,4 +1,4 @@
-static PROGMEM prog_uchar selftest1_code[] = {
+static flash_uint8_t selftest1_code[] = {
 0x94,0x15,
 0x01,0x80,
 0x0F,0x72,

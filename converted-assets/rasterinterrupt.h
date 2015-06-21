@@ -1,4 +1,4 @@
-static PROGMEM prog_uchar rasterinterrupt_code[] = {
+static flash_uint8_t rasterinterrupt_code[] = {
 0x8C,0x15,
 0x01,0x80,
 0x0F,0x72,

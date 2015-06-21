@@ -1,6 +1,6 @@
 #define PAUSE(x)      255,x
 #define NOTE(v, p, a) v, p, a
-static PROGMEM prog_uchar widor_toccata[] = {
+static flash_uint8_t widor_toccata[] = {
 /* {'track': 1, 'velocity': 70, 't': 0, 'channel': 2, 'pitch': 65} */
 PAUSE(1),
 NOTE(8, 65, 70),

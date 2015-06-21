@@ -1,4 +1,4 @@
-static PROGMEM prog_uchar spectrum_code[] = {
+static flash_uint8_t spectrum_code[] = {
 0xEE,0x15,
 0x01,0x80,
 0x0F,0x72,

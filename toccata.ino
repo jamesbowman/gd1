@@ -74,7 +74,7 @@ static void pause(int n)
 
 static void play()
 {
-  prog_uchar *pc = widor_toccata;
+  flash_uint8_t *pc = widor_toccata;
   while (pc < (widor_toccata + sizeof(widor_toccata))) {
     byte a = pgm_read_byte_near(pc++);
     byte b = pgm_read_byte_near(pc++);

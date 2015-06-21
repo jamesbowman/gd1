@@ -1,4 +1,4 @@
-static PROGMEM prog_uchar showvoices_code[] = {
+static flash_uint8_t showvoices_code[] = {
 0x81,0x15,
 0x00,0x80,
 0x81,0x60,

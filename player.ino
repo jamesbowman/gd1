@@ -78,7 +78,7 @@ void adsr()  // handle ADSR for 64 voices
 
 void loop()
 {
-  prog_uchar *pc;
+  flash_uint8_t *pc;
   long started = millis();
   int ticks = 0;
   for (pc = mont; pc < mont + sizeof(mont);) {

@@ -3,5 +3,5 @@ for p in $*
 do
   echo $p
   ./mkino $p
-  read X
+  # read X
 done

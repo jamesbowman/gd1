@@ -3,392 +3,392 @@ static void draw_sphere(int x, int y, byte anim, byte rot, byte jk = 0) {
   switch (anim) {
   case 0:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 0, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 0, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 1:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 0, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 0, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 2:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 1, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 1, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 3:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 1, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 1, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 4:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 2, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 2, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 5:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 2, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 2, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 6:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 3, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 3, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 7:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 3, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 3, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 8:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 4, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 4, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 9:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 4, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 4, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 10:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 5, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 5, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 11:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 5, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 5, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 12:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 6, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 6, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 13:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 6, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 6, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 14:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 7, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 7, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 15:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 7, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 7, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 16:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 8, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 8, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 17:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 8, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 8, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 18:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 9, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 9, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 19:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 9, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 9, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 20:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 10, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 10, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 21:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 10, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 10, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 22:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 11, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 11, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 23:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 11, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 11, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 24:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 12, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 12, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 25:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 12, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 12, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 26:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 13, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 13, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 27:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 13, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 13, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 28:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 14, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 14, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 29:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 14, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 14, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 30:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 15, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 15, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 31:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 15, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 15, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 32:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 16, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 16, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 33:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 16, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 16, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 34:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 17, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 17, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 35:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 17, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 17, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 36:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 18, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 18, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 37:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 18, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 18, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 38:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 19, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 19, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 39:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 19, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 19, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 40:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 20, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 20, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 41:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 20, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 20, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 42:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 21, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 21, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 43:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 21, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 21, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 44:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 22, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 22, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 45:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 22, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 22, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 46:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 23, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 23, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 47:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 23, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 23, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 48:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 24, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 24, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 49:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 24, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 24, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 50:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 25, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 25, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 51:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 25, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 25, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 52:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 26, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 26, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 53:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 26, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 26, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 54:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 27, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 27, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 55:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 27, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 27, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 56:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 28, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 28, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 57:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 28, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 28, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 58:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 29, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 29, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 59:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 29, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 29, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 60:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 30, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 30, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 61:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 30, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 30, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 62:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 31, 4}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 31, 4}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   case 63:
 {
-    static PROGMEM sprplot sp[] = {{-8, -8, 31, 6}};
+    static const PROGMEM sprplot sp[] = {{-8, -8, 31, 6}};
     GD.plots(x, y, sp, 1, rot, jk);
 }
     break;
   }
 }
 
-static PROGMEM prog_uchar sphere_img[] = {
+static flash_uint8_t sphere_img[] = {
 
 0xff,  0xff,  0xff,  0xff,  0xff,  0xf3,  0x32,  0x32,  0x33,  0x33,  0xf3,  0xff,  0xff,  0xff,  0xff,  0xff, 
 0xff,  0xff,  0xff,  0xf3,  0x22,  0x10,  0x00,  0x00,  0x11,  0x32,  0x44,  0x55,  0xf6,  0xff,  0xff,  0xff, 
@@ -934,12 +934,12 @@ static PROGMEM prog_uchar sphere_img[] = {
 0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff, 
 0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff,  0xff, 
 };
-static PROGMEM prog_uchar sphere_pal[] = {
+static flash_uint8_t sphere_pal[] = {
 
 0x7a,  0x7f,  0xb3,  0x6a,  0xec,  0x59,  0xa8,  0x55,  0x88,  0x49,  0x46,  0x45,  0x46,  0x41,  0x25,  0x3d, 
 0x05,  0x35,  0xe4,  0x30,  0xc4,  0x2c,  0xa3,  0x24,  0x82,  0x20,  0x62,  0x18,  0x00,  0x00,  0x00,  0x80, 
 };
-static PROGMEM prog_char cloud[] = {
+static flash_int8_t cloud[] = {
 0,107,-127,
 0,-69,-127,
 17,75,-124,
@@ -1191,7 +1191,7 @@ static PROGMEM prog_char cloud[] = {
 -17,75,124,
 -8,-102,124,
 };
-static PROGMEM prog_uchar ramp_pic[] = {
+static flash_uint8_t ramp_pic[] = {
 
 0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80, 
 0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80,  0x80, 
@@ -1204,7 +1204,7 @@ static PROGMEM prog_uchar ramp_pic[] = {
 0xc1,  0xc2,  0xc3,  0xc4,  0xc5,  0xc6,  0xc7,  0xc8,  0xc9,  0xca,  0xcb,  0xcc,  0xcd,  0xce,  0xcf,  0xd0, 
 0xd1,  0xd2,  0xd3,  0xd4,  0xd5,  0xd6,  0xd6,  0xd7, 
 };
-static PROGMEM prog_uchar ramp_chr[] = {
+static flash_uint8_t ramp_chr[] = {
 
 0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00, 
 0x55,  0x55,  0x55,  0x55,  0x55,  0x55,  0x55,  0x55,  0x55,  0x55,  0x45,  0x54,  0x51,  0x40,  0x05,  0x45, 
@@ -1300,7 +1300,7 @@ static PROGMEM prog_uchar ramp_chr[] = {
 0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00, 
 0x55,  0x54,  0x55,  0x55,  0x55,  0x55,  0x55,  0x55,  0x55,  0x55,  0x55,  0x55,  0x55,  0x55,  0x55,  0x55, 
 };
-static PROGMEM prog_uchar ramp_pal[] = {
+static flash_uint8_t ramp_pal[] = {
 
 0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x21,  0x04,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00, 
 0x21,  0x04,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x21,  0x04,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00, 

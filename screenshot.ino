@@ -14,7 +14,7 @@ void setup()
 
   GD.wr16(RAM_PAL + (8 * 127), RED);   // char 127: 0=red, 3=green
   GD.wr16(RAM_PAL + (8 * 127) + 6, GREEN);
-  static PROGMEM prog_uchar box[] = {
+  static flash_uint8_t box[] = {
      0xff, 0xff,
      0xc0, 0x03,
      0xc0, 0x03,

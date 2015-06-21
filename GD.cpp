@@ -126,7 +126,7 @@ void GDClass::fill(int addr, byte v, unsigned int count)
   __end();
 }
 
-void GDClass::copy(unsigned int addr, PROGMEM prog_uchar *src, int count)
+void GDClass::copy(unsigned int addr, flash_uint8_t *src, int count)
 {
   __wstart(addr);
   while (count--) {
@@ -148,7 +148,7 @@ void GDClass::copy(unsigned int addr, uint_farptr_t src, int count)
 }
 #endif
 
-void GDClass::microcode(PROGMEM prog_uchar *src, int count)
+void GDClass::microcode(flash_uint8_t *src, int count)
 {
   wr(J1_RESET, 1);
   copy(J1_CODE, src, count);
@@ -207,7 +207,7 @@ void GDClass::xhide()
   spr++;
 }
 
-void GDClass::plots(int ox, int oy, PROGMEM sprplot *psp, byte count, byte rot, byte jk)
+void GDClass::plots(int ox, int oy, const PROGMEM sprplot *psp, byte count, byte rot, byte jk)
 {
   while (count--) {
     struct sprplot sp;
@@ -343,7 +343,7 @@ void GDClass::screenshot(unsigned int frame)
 // near ptr version
 class GDflashbits {
 public:
-  void begin(prog_uchar *s) {
+  void begin(flash_uint8_t *s) {
     src = s;
     mask = 0x01;
   }
@@ -365,13 +365,13 @@ public:
     return r;
   }
 private:
-  prog_uchar *src;
+  flash_uint8_t *src;
   byte mask;
 };
 
 static GDflashbits GDFB;
 
-void GDClass::uncompress(unsigned int addr, prog_uchar *src)
+void GDClass::uncompress(unsigned int addr, flash_uint8_t *src)
 {
   GDFB.begin(src);
   byte b_off = GDFB.getn(4);

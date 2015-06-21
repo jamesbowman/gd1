@@ -1,4 +1,4 @@
-static PROGMEM prog_uchar wireframe_code[] = {
+static flash_uint8_t wireframe_code[] = {
 0xE0,0x15,
 0x44,0x60,
 0x0F,0x80,

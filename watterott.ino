@@ -196,7 +196,7 @@ void loop()
     // JCB-JITTER-A
     GD.wr16(SCROLL_X, random(-1, 2));
     GD.wr16(SCROLL_Y, random(-1, 2));
-    prog_uchar *src = logobg_pic + (12 * 25 * jitter);
+    flash_uint8_t *src = logobg_pic + (12 * 25 * jitter);
     for (byte y = 0; y < 12; y++) {
       GD.copy(atxy(24, 12 + y), src, 25);
       src += 25;

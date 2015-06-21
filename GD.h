@@ -29,6 +29,9 @@ extern HardwareSPI SPI;
 #include <string.h>
 #endif
 
+#define flash_uint8_t   const PROGMEM uint8_t
+#define flash_int8_t    const PROGMEM int8_t
+
 struct sprplot
 {
   char x, y;
@@ -47,7 +50,7 @@ public:
   static unsigned int rd16(unsigned int addr);
   static void wr16(unsigned int addr, unsigned int v);
   static void fill(int addr, byte v, unsigned int count);
-  static void copy(unsigned int addr, prog_uchar *src, int count);
+  static void copy(unsigned int addr, flash_uint8_t *src, int count);
 #if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
   static void copy(unsigned int addr, uint_farptr_t src, int count);
   static void microcode(uint_farptr_t src, int count);
@@ -58,8 +61,8 @@ public:
   static void sprite(int spr, int x, int y, byte image, byte palette, byte rot = 0, byte jk = 0);
   static void sprite2x2(int spr, int x, int y, byte image, byte palette, byte rot = 0, byte jk = 0);
   static void waitvblank();
-  static void microcode(prog_uchar *src, int count);
-  static void uncompress(unsigned int addr, prog_uchar *src);
+  static void microcode(flash_uint8_t *src, int count);
+  static void uncompress(unsigned int addr, flash_uint8_t *src);
 
   static void voice(int v, byte wave, unsigned int freq, byte lamp, byte ramp);
   static void ascii();
@@ -70,7 +73,7 @@ public:
   void __wstartspr(unsigned int spr = 0);
   void xsprite(int ox, int oy, char x, char y, byte image, byte palette, byte rot = 0, byte jk = 0);
   void xhide();
-  void plots(int ox, int oy, sprplot *psp, byte count, byte rot, byte jk);
+  void plots(int ox, int oy, const sprplot *psp, byte count, byte rot, byte jk);
 
   byte spr;   // Current sprite, incremented by xsprite/xhide above
 };

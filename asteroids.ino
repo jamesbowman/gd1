@@ -107,7 +107,7 @@ uint16_t swapRG(uint16_t color)
 static void update_score();
 
 // [int(127 * math.sin(math.pi * 2 * i / 16)) for i in range(16)]
-static PROGMEM prog_uchar charsin[16] = {0, 48, 89, 117, 127, 117, 89, 48, 0, -48, -89, -117, -127, -117, -89, -48};
+static flash_uint8_t charsin[16] = {0, 48, 89, 117, 127, 117, 89, 48, 0, -48, -89, -117, -127, -117, -89, -48};
 #define qsin(a) (char)pgm_read_byte_near(charsin + ((a) & 15))
 #define qcos(a) qsin((a) + 4)
 
@@ -421,7 +421,7 @@ static handler handlers[] = {
 
 class GDflashbits {
 public:
-  void begin(prog_uchar *s) {
+  void begin(flash_uint8_t *s) {
     src = s;
     mask = 0x01;
   }
@@ -443,13 +443,13 @@ public:
     return r;
   }
 private:
-  prog_uchar *src;
+  flash_uint8_t *src;
   byte mask;
 };
 
 static GDflashbits GDFB;
 
-static void GD_uncompress(unsigned int addr, PROGMEM prog_uchar *src)
+static void GD_uncompress(unsigned int addr, flash_uint8_t *src)
 {
   GDFB.begin(src);
   byte b_off = GDFB.getn(4);
@@ -475,7 +475,7 @@ static void GD_uncompress(unsigned int addr, PROGMEM prog_uchar *src)
 static void titlepaint(char *dst, byte src, byte mask)
 {
   if (src != 0xff) {
-    prog_uchar *psrc = title_runs + 2 * src;
+    flash_uint8_t *psrc = title_runs + 2 * src;
     byte a, b;
     do {
       a = pgm_read_byte_near(psrc++);
@@ -491,7 +491,7 @@ static void column(byte dst, byte src)
 {
   static char scratch[76];
   memset(scratch, 0, sizeof(scratch));
-  prog_uchar line = pgm_read_byte_near(title + 2 * src);
+  uint8_t line = pgm_read_byte_near(title + 2 * src);
   titlepaint(scratch, line, 1);
   line = pgm_read_byte_near(title + 2 * src + 1);
   titlepaint(scratch, line, 2);
@@ -561,7 +561,7 @@ static byte scrap;
 // copy a (w,h) rectangle from the source image (x,y) into picture RAM
 static void rect(unsigned int dst, byte x, byte y, byte w, byte h)
 {
-  prog_uchar *src = bg_pic + (16 * y) + x;
+  flash_uint8_t *src = bg_pic + (16 * y) + x;
   while (h--) {
     GD.copy(dst, src, w);
     dst += 64;
@@ -627,7 +627,7 @@ static int atxy(int x, int y)
 
 static void update_score()
 {
-  prog_uchar* digitcodes = bg_pic + (16 * 30);
+  flash_uint8_t* digitcodes = bg_pic + (16 * 30);
   unsigned long s = score;
   uint16_t a = atxy(49, scrap << 3);
   byte i;

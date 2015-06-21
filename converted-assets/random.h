@@ -1,4 +1,4 @@
-static PROGMEM prog_uchar random_code[] = {
+static flash_uint8_t random_code[] = {
 0x81,0x15,
 0x00,0x80,
 0xED,0xFF,

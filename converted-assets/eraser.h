@@ -1,4 +1,4 @@
-static PROGMEM prog_uchar eraser_code[] = {
+static flash_uint8_t eraser_code[] = {
 0x81,0x15,
 0x98,0xA8,
 0x00,0x60,
