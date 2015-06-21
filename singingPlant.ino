@@ -1,3 +1,8 @@
+/*
+ * This is singingPlant from the this instructable:
+ * http://www.instructables.com/id/Singing-plant-Make-your-plant-sing-with-Arduino-/
+ *
+ */
 #include <SPI.h>
 #include <GD.h>
 
@@ -140,7 +145,7 @@ void loop()
   if (millis() < (started + ticks * 5)) {
     adsr();
   } else {
-    byte cmd = pgm_read_byte_near(pc++);	// upper 2 bits are command code
+    byte cmd = pgm_read_byte_near(pc++);        // upper 2 bits are command code
     if ((cmd & 0xc0) == 0) {
       // Command 0x00: pause N*5 milliseconds
       ticks += (cmd & 63);
@@ -148,19 +153,19 @@ void loop()
       byte v = (cmd & 63);
       byte a;
       if ((cmd & 0xc0) == 0x40) {
-	// Command 0x40: silence voice
-	target[v] = 0;
+        // Command 0x40: silence voice
+        target[v] = 0;
       } else if ((cmd & 0xc0) == 0x80) {
-	// Command 0x80: set voice frequency and amplitude
-	byte flo = pgm_read_byte_near(pc++);
-	if (value < 0)
-	  flo = 0;
-	byte fhi = pgm_read_byte_near(pc++) * ((float) value / 300.0f);
-	GD.__wstart(VOICES + 4 * v);
-	SPI.transfer(flo);
-	SPI.transfer(fhi);
-	GD.__end();
-	target[v] = pgm_read_byte_near(pc++);
+        // Command 0x80: set voice frequency and amplitude
+        byte flo = pgm_read_byte_near(pc++);
+        if (value < 0)
+          flo = 0;
+        byte fhi = pgm_read_byte_near(pc++) * ((float) value / 300.0f);
+        GD.__wstart(VOICES + 4 * v);
+        SPI.transfer(flo);
+        SPI.transfer(fhi);
+        GD.__end();
+        target[v] = pgm_read_byte_near(pc++);
       }
     }
   }
@@ -170,8 +175,8 @@ void loop()
     topPoint = 0;
     topPointValue = 0;
   }
-  int v = analogRead(0);	//-Read response signal
-  results[d] = results[d] * 0.5 + (float) (v) * 0.5;	//Filter results
+  int v = analogRead(0);        //-Read response signal
+  results[d] = results[d] * 0.5 + (float) (v) * 0.5;    //Filter results
   fixedGraph = round(results[d]);
   gUpdateValue(&fixedGraph);
   if (topPointValue < results[d]) {
@@ -179,20 +184,20 @@ void loop()
     topPoint = d;
   }
 
-  CLR(TCCR1B, 0);		//-Stop generator
-  TCNT1 = 0;			//-Reload new frequency
-  ICR1 = d;			// |
-  OCR1A = d / 2;		//-+
-  SET(TCCR1B, 0);		//-Restart generator
+  CLR(TCCR1B, 0);               //-Stop generator
+  TCNT1 = 0;                    //-Reload new frequency
+  ICR1 = d;                     // |
+  OCR1A = d / 2;                //-+
+  SET(TCCR1B, 0);               //-Restart generator
 
   d++;
   if (d == N) {
     topPointInterPolated = topPointInterPolated * 0.5f +
-	((topPoint +
-	  results[topPoint] / results[topPoint + 1] * results[topPoint - 1] /
-	  results[topPoint]) * 10.0f) * 0.5f;
+        ((topPoint +
+          results[topPoint] / results[topPoint + 1] * results[topPoint - 1] /
+          results[topPoint]) * 10.0f) * 0.5f;
     value =
-	max(0, map(topPointInterPolated, baseline, baselineMax, 0, 1000));
+        max(0, map(topPointInterPolated, baseline, baselineMax, 0, 1000));
     gUpdateValue(&topPoint);
     gUpdateValue(&value);
     gUpdateValue(&topPointInterPolated);

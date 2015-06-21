@@ -53,6 +53,8 @@ for d,projs in inventory.items():
         testset.write(p + " ")
         legit.append(p + ".ino")
 
+z.write("contrib/Guino_libray.ino", "Gameduino/7.Contrib/singingPlant/Guino_libray.ino")
+
 testset.close()
 z.close()
 
