@@ -34,7 +34,7 @@ def clean(src):
 
 z = zipfile.ZipFile("Gameduino.zip", "w", zipfile.ZIP_DEFLATED)
 
-for f in "GD.cpp GD.h".split():
+for f in "GD.cpp GD.h font8x8.h".split():
     z.write(f, "Gameduino/%s" % f)
 
 legit = []
