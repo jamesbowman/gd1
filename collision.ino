@@ -79,7 +79,6 @@ void setup()
 {
   int i;
 
-  Serial.begin(1000000); // JCB
   GD.begin();
   
   GD.wr(JK_MODE, 0);
@@ -178,6 +177,4 @@ void loop()
     delay(1000);
     timer = 0;
   }
-  static int ss;        // JCB
-  GD.screenshot(ss++);  // JCB
 }
