@@ -146,7 +146,6 @@ void add_samples(uint32_t dir)
 
 void setup()
 {
-  Serial.begin(1000000);    // JCB
   controller_init();
   GD.begin();
   GD.ascii();
@@ -216,7 +215,6 @@ void loop()
     static byte prev;
     byte press;
     press = controller_sense();
-    press = random(16);
     if (prev == 0) {
       if (press & CONTROL_DOWN)
         cursor = min(ninstruments - 1, cursor + 1);
