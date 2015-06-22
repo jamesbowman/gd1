@@ -9,7 +9,7 @@ inventory = {
     '1.Basics'          : "sprites256 palettes rotate collision scroll",
     '2.Audio'           : "toccata player sample instruments2",
     '3.Advanced'        : "interrupt splitscreen jkcollision bitmap wireframe snow assets",
-    '4.Demo'            : "ball chessboard dna spectrum cp437 watterott",
+    '4.Demo'            : "ball desert chessboard dna spectrum cp437 watterott",
     '5.Games'           : "asteroids frogger chopper manicminer",
     '6.Tools'           : "selftest screenshot memloader joytest",
     '7.Contrib'         : "singingPlant",
